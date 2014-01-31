@@ -31,6 +31,7 @@ void right(short value);
 void left(short value);
 void strafe(short value);
 void lift();
+void liftstop(); //stops all motors on the lift
 void intake();
 void drive();
 
@@ -96,6 +97,13 @@ void strafe(short value)
 }
 void lift()
 {
+	motor[lift_bot_R] = 50;
+	motor[lift_bot_L] = 50;
+	motor[lift_top_R] = 50;
+	motor[lift_top_L] = 50;
+}
+void liftstop()  //block added
+{
 	motor[lift_bot_R] = 0;
 	motor[lift_bot_L] = 0;
 	motor[lift_top_R] = 0;
@@ -130,6 +138,14 @@ void drive()
 		opp_chan4 = !chan4;
 		left(opp_chan4);
 		right(chan4);
+	}
+	if(vexRT(Btn5U) == 1) //for lift()
+	{
+		lift();
+	}
+	if(vexRT(Btn5D) == 1) //for liftstop()
+	{
+		liftstop();
 	}
 	else
 	{
