@@ -1,0 +1,11 @@
+ Port Number	  Motor 
+ -----------------------------
+ port2,           omni_Back,     
+ port3,           omni_Right,    
+ port4,           omni_Left,     
+ port5,           lift_bot_R,    
+ port6,           lift_bot_L,    
+ port7,           lift_top_R,
+ port8,           lift_top_L,    
+ port9,           intake_R, 
+ port10,          intake_L

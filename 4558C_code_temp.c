@@ -33,6 +33,7 @@ void strafe(short value);
 void lift();
 void liftstop(); //stops all motors on the lift
 void intake();
+void intakestop();
 void drive();
 
 
@@ -111,6 +112,13 @@ void liftstop()  //block added
 }
 void intake()
 {
+	motor[intake_L] = 50;
+	motor[intake_R] = 50;
+}
+void intakestop()
+{
+	motor[intake_L] = 0;
+	motor[intake_R] = 0;
 }
 void drive()
 {
@@ -146,6 +154,14 @@ void drive()
 	if(vexRT(Btn5D) == 1) //for liftstop()
 	{
 		liftstop();
+	}
+	if(vexRT(Btn6U) == 1)
+	{
+		intake();
+	}
+	if(vexRT(Btn6D) == 1)
+	{
+		intakestop();
 	}
 	else
 	{
